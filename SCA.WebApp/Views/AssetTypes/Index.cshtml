@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SCA.WebApp.Models.AssetTypeViewModel>
+
+<h2>Tipos de ativos</h2>
+<hr />
+
+<div class="row" >
+    <div class="col-md-12">
+        <div>
+            <div class="pull-left">
+                <a asp-action="Create" class="btn btn-primary">
+                    <span title="Criar novo" class="fas fa-plus"></span> Adicionar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="panel panel-default" >
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NeedMaintenance)
+                </th>
+                 <th>
+                    @Html.DisplayNameFor(model => model.NumberMaintenanceDays)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NeedMaintenance)
+                    </td>
+                     <td>
+                        @Html.DisplayFor(modelItem => item.NumberMaintenanceDays)
+                    </td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@item.Id" title="Atualizar" class="btn btn-warning">
+                            <span class="fas fa-edit"></span>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" title="Excluir" class="btn btn-danger">
+                            <span class="fas fa-trash-alt"></span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,53 @@
+﻿@model SCA.WebApp.Models.AssetViewModel
+
+<h4>Excluir ativo</h4>
+
+<h5>Confirma a exclusão?</h5>
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AssetTypeName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AssetTypeName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NeedMaintenance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NeedMaintenance)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AcquisitionDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AcquisitionDate)
+        </dd>
+           <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OperationDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OperationDate)
+        </dd>
+    </dl>
+    <br />
+    <hr />
+    <form asp-action="Delete">
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-info"> Voltar</a>
+    </form>
+</div>

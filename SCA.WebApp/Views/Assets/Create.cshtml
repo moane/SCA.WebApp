@@ -1,0 +1,49 @@
+﻿@model SCA.WebApp.Models.AssetViewModel
+
+<h2>Cadastrar ativo</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="AcquisitionDate" class="control-label"></label>
+                <input asp-for="AcquisitionDate" class="form-control" />
+                <span asp-validation-for="AcquisitionDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="OperationDate" class="control-label"></label>
+                <input asp-for="OperationDate" class="form-control" />
+                <span asp-validation-for="OperationDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="NeedMaintenance" /> @Html.DisplayNameFor(model => model.NeedMaintenance)
+                </label>
+            </div>
+            <br />
+                       
+            <div class="form-group">
+                <label asp-for="AssetTypeId" class="control-label"></label>               
+                 <select asp-for="AssetTypeId" class="form-control" asp-items="@ViewBag.AssetTypeId"> </select>
+                
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-info"> Voltar</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+<hr />

@@ -1,0 +1,44 @@
+﻿@model SCA.WebApp.Models.AccountViewModel
+
+
+<h2>Login</h2>
+<img src="~/images/seta_verde.png" class="img-fluid" asp-append-version="true" />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = "/Home/Index" }, FormMethod.Post))
+        {
+         
+        <form asp-action="Login">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="User" class="control-label"></label>
+                <input asp-for="User" class="form-control" />
+                <span asp-validation-for="User" class="text-danger"></span>
+            </div>
+            <br />
+           
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <br />
+             @*<div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                </label>
+            </div>*@
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Entrar" class="btn btn-primary" />
+                  
+                </div>
+            </div>
+        </form>
+        }
+    </div>
+</div>
+<hr />
